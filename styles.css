@@ -46,6 +46,10 @@ button:hover{
     opacity:75%;
 }
 
+.labelTag{
+    padding-bottom: 2rem;
+}
+
 .textInput {
     background-color:white;
     padding: .5rem;
@@ -59,7 +63,7 @@ button:hover{
     padding-bottom:2rem;
 }
 
-.searchContainer{
+.searchContainer, .dietContainer{
     background-color: #B8EDA6;
     display: flex;
     justify-content: center;
@@ -73,12 +77,6 @@ button:hover{
     padding-top:2rem;
 }
 
-.dietContainer{
-    background-color: #B8EDA6;
-    display: flex;
-    justify-content: center;
-    padding-top:2rem;
-}
 .compareAnimals{
     text-align: center;
 }
