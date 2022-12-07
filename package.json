@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sh1eldma1den/animal-finder/issues"
   },
-  "homepage": "https://github.com/sh1eldma1den/animal-finder#readme"
+  "homepage": "https://github.com/sh1eldma1den/animal-finder#readme",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }

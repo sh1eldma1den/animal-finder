@@ -93,18 +93,28 @@ button:hover{
 .myListCompare{
     background-color: aliceblue;
     min-width: 350px;
+    border-radius: 10px;
 }
 /* Large screen */
 @media only screen and (min-width: 768px) {
     .container{
         padding-top:0;
         padding-bottom:2rem;
-        margin-left:5%;
-        margin-right: 5%;
-        border-radius: 10px;
+        margin-left:10%;
+        margin-right: 10%;
     }
     .searchContainer, .habitatContainer,.dietContainer{
         padding-top:2rem;
+    }
+
+    .searchContainer {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+    }
+
+    .dietContainer {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
     .compareResults{
         display: flex;

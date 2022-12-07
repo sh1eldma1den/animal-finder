@@ -1,17 +1,30 @@
-const axios = require("axios");
+require('cors')
 
-const options = {
-  method: 'GET',
-  url: 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals',
-  params: {name: 'elephant' },
-  headers: {
-    'X-RapidAPI-Key': '3ef67f7eeamsh8b4f075f34e3a7dp18e177jsn3a434a265872',
-    'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com'
-  }
-};
+document.querySelectot('submitName').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('searchName')
+  const request = require('request');
+  request.get({
+   url: 'https://api.api-ninjas.com/v1/animals?name=' + name,
+    headers: {
+      'X-Api-Key': '4e3a7dp18e177jsn3a434a265872'
+    },
+  }, function(error, response, body) {
+    if(error) {
+      return console.error('Request failed:', error);
+    }else if(response.statusCode != 200) {
+      return console.error('Error:', response.statusCode, body.toString('utf8'));
+    }else {
 
-axios.request(options).then(function (response) {
-	console.log(response.data);
-}).catch(function (error) {
-	console.error(error);
-});
+      const details = print(response.data)
+      // const renderDetails = `<h3>${this.name}</h3>
+      //   <h2 class="divider">${this.name}</h2>
+      //   <p class="group">${this.product.Colors[0].ColorName}</p>
+      //   <p class="diet">${this.product.DescriptionHtmlSimple}</p>
+      //   <p class="location">${this.}
+      //   <div class="product-detail__add">
+      //     <button class="btn-primary" id="addToCart" data-id=${this.product.Id}>Add to Cart</button>
+      //   </div>`
+
+    document.querySelector('.searchResultTop').innerHTML = details
+}})})
