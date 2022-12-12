@@ -1,4 +1,3 @@
-
 export async function getAnimal() {
   const name = document.getElementById('searchName')
   const request = require('request');
