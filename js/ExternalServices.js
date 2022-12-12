@@ -1,6 +1,5 @@
 
-document.querySelector('#submitName').addEventListener('submit', e => {
-  e.preventDefault();
+export function getAnimal(){
   const name = document.getElementById('searchName')
   const request = require('request');
   request.get({
@@ -26,7 +25,7 @@ document.querySelector('#submitName').addEventListener('submit', e => {
       //   </div>`
 
     document.querySelector('.searchResultTop').innerHTML = details
-}})})
+}})}
 
 export default class ExternalServices {
   constructor() {}
