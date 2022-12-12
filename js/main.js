@@ -9,5 +9,5 @@ const animalList = new AnimalList(selector, externalServices, parentNode)
 
 document.getElementById('submitName').addEventListener('submit', e => {
     const newAnimal = document.getElementById('submitName')
-    console.log(getAnimal(newAnimal.value))
+    console.log(getAnimal)
 })
