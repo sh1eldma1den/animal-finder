@@ -24,7 +24,7 @@ export default class AnimalList {
     return this.animals.length
   }
 
-  prepareTemplate(node, product, name) {
+  prepareTemplate(node, animal, name) {
     const finalNode = node
     const name = finalNode.querySelector('.card-name')
     const locations = finalNode.querySelector('.card-locations')
