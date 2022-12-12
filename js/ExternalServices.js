@@ -14,14 +14,6 @@ export async function getAnimal() {
     }else {
 
       const details = print(response.data)
-      // const renderDetails = `<h3>${this.name}</h3>
-      //   <h2 class="divider">${this.name}</h2>
-      //   <p class="group">${this.product.Colors[0].ColorName}</p>
-      //   <p class="diet">${this.product.DescriptionHtmlSimple}</p>
-      //   <p class="location">${this.}
-      //   <div class="product-detail__add">
-      //     <button class="btn-primary" id="addToCart" data-id=${this.product.Id}>Add to Cart</button>
-      //   </div>`
 
     document.querySelector('.searchResultTop').innerHTML = details
 }})}

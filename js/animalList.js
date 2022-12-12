@@ -2,18 +2,19 @@ import { renderListWithTemplate } from './utils.js'
 import ExternalServices from './ExternalServices.js'
 
 export default class AnimalList {
-  constructor(animalData, listElement) {
+  constructor(animalData, listElement, selector) {
     this.animal = animal
     this.ExternalServices = animalData
     this.listElement = listElement
     this.animals = {}
+    this.selector = ''
   }
   
   async init() {
     this.animals = await this.ExternalServices.getData(this.animal)
     this.selector = selector
 
-    this.renderList(this.animals, this.listElement, this.animal)
+    this.renderList(this.animals, this.listElement, this.animal, this.selector)
   }
 
   prepareTemplate(node, animal) {
