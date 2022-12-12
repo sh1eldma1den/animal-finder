@@ -26,7 +26,7 @@ export default class AnimalList {
 
   prepareTemplate(node, animal, name) {
     const finalNode = node
-    const name = finalNode.querySelector('.card-name')
+    const animalName = finalNode.querySelector('.card-name')
     const locations = finalNode.querySelector('.card-locations')
     const prey = finalNode.querySelector('.card-prey')
     const behavior = finalNode.querySelector('.card-behavior')
@@ -37,7 +37,7 @@ export default class AnimalList {
     const desc = finalNode.querySelector('.card-slogan')
 
 
-    name.textContent = animal.name
+    animalName.textContent = animal.name
     locations.textContent = animal.characteristics.locations
     prey.textContent = animal.characteristics.prey
     behavior.textContent = animal.characteristics.group_behavior
