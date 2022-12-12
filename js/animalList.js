@@ -45,12 +45,12 @@ export default class AnimalList {
   }
   // render the list with the template
   renderList(AnimalList, selector, parentNode, animal) {
-    const templateElement = document.querySelector()
+    const templateElement = document.querySelector(selector)
     renderListWithTemplate(
       templateElement,
       parentNode,
-      productList,
-      category,
+      AnimalList,
+      animal,
       this.prepareTemplate
     )
   }
