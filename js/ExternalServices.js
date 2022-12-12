@@ -1,8 +1,8 @@
 export async function getAnimal() {
-  const name = document.getElementById('searchName')
+  const animal = document.getElementById('searchName')
   const request = require('request');
   request.get({
-   url: 'https://api.api-ninjas.com/v1/animals?name=' + name,
+   url: 'https://api.api-ninjas.com/v1/animals?name=' + animal,
     headers: {
       'X-Api-Key': '4e3a7dp18e177jsn3a434a265872'
     },
@@ -21,8 +21,8 @@ export async function getAnimal() {
 export default class ExternalServices {
   constructor() {}
 
-  async getData(name) {
-    const res = await fetch(baseURL + `${name}`)
+  async getData(animal) {
+    const res = await fetch(baseURL + `${animal}`)
     const data = await convertToJson(res)
     return data.Result
   }
