@@ -3,7 +3,7 @@ import ExternalServices from './ExternalServices.js'
 
 export default class AnimalList {
   constructor(animalData, listElement) {
-    this.category = category
+    this.name = name
     this.ExternalServices = animalData
     this.listElement = listElement
     this.animals = {}
