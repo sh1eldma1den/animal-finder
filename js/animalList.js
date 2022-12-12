@@ -1,5 +1,5 @@
-import { renderListWithTemplate } from './utils'
-import ExternalServices from './ExternalServices'
+import { renderListWithTemplate } from './utils.js'
+import ExternalServices from './ExternalServices.js'
 
 export default class AnimalList {
   constructor(animalData, listElement) {
