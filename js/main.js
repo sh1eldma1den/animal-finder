@@ -8,9 +8,7 @@ const selector = '#animal-card-template'
 const externalServices = new ExternalServices()
 const animalList = new AnimalList(selector, externalServices, parentNode)
 
-// event listener for the submit button
+// event listener for the submit button, triggers the process of rendering the lists
 document.getElementById('submitName').addEventListener('submit', e => {
-    getAnimal()
-    .then()
     animalList.init(selector)
 })
