@@ -17,13 +17,6 @@ export default class AnimalList {
     this.renderList(this.animals, selector, this.listElement, this.name)
   }
 
-  async filterProducts(list, filter) {
-    return list.filter(item => filter(item))
-  }
-  countItems() {
-    return this.animals.length
-  }
-
   prepareTemplate(node, animal, name) {
     const finalNode = node
     const animalName = finalNode.querySelector('.card-name')
