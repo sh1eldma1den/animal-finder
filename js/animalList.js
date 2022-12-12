@@ -3,21 +3,20 @@ import ExternalServices from './ExternalServices.js'
 
 export default class AnimalList {
   constructor(animalData, listElement) {
-    this.name = name
+    this.animal = animal
     this.ExternalServices = animalData
     this.listElement = listElement
     this.animals = {}
-    this.selector = ''
   }
   
-  async init(selector) {
-    this.animals = await this.ExternalServices.getData(this.name)
+  async init() {
+    this.animals = await this.ExternalServices.getData(this.animal)
     this.selector = selector
 
-    this.renderList(this.animals, selector, this.listElement, this.name)
+    this.renderList(this.animals, this.listElement, this.animal)
   }
 
-  prepareTemplate(node, animal, name) {
+  prepareTemplate(node, animal) {
     const finalNode = node
     const animalName = finalNode.querySelector('.card-name')
     const locations = finalNode.querySelector('.card-locations')
@@ -43,8 +42,8 @@ export default class AnimalList {
     return finalNode
   }
 
-  renderList(AnimalList, selector, parentNode, category) {
-    const templateElement = document.querySelector(selector)
+  renderList(AnimalList, parentNode, selector) {
+    const templateElement = document.querySelector()
     renderListWithTemplate(
       templateElement,
       parentNode,
@@ -54,10 +53,4 @@ export default class AnimalList {
     )
   }
 
-  searchProduct(key) {
-    const products = this.products.filter(item =>
-      item.Name.toLowerCase().includes(key.toLowerCase())
-    )
-    this.renderList(products, this.selector, this.listElement, this.category)
-  }
 }
