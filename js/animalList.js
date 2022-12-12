@@ -2,7 +2,7 @@ import { renderListWithTemplate } from './utils'
 import ExternalServices from './ExternalServices'
 
 export default class AnimalList {
-  constructor(name, animalData, listElement) {
+  constructor(animalData, listElement) {
     this.category = category
     this.ExternalServices = animalData
     this.listElement = listElement
@@ -16,7 +16,7 @@ export default class AnimalList {
 
     this.renderList(this.animals, selector, this.listElement, this.name)
   }
-  
+
   async filterProducts(list, filter) {
     return list.filter(item => filter(item))
   }
