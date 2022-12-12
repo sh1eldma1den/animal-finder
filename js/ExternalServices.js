@@ -1,5 +1,5 @@
 
-document.querySelector('submitName').addEventListener('submit', e => {
+document.querySelector('#submitName').addEventListener('submit', e => {
   e.preventDefault();
   const name = document.getElementById('searchName')
   const request = require('request');
