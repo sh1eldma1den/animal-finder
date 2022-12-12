@@ -5,7 +5,7 @@
 *::after {
   box-sizing: border-box;
 }
-
+/* basic typographic stying */
 h1, h2, h3 {
     font-family: Merriweather, Georgia, 'Times New Roman', Times, serif;
     color:#001A34;
@@ -19,7 +19,7 @@ p, .labelTag{
     font-family: Roboto, Open Sans, Arial, Helvetica, sans-serif;
     color:#001A34;
 }
-
+/* header styling */
 header{
     background-image: linear-gradient(#498acb, #B8EDA6);
     padding-top:2rem;
@@ -30,6 +30,7 @@ header{
     margin-top: 10%;
     padding-bottom:0;
 }
+/* "my list" sidebar styling */
 #sidebar {
     display: none;
     position: absolute;
@@ -96,6 +97,7 @@ header{
 .toggleButton span:hover{
     opacity:100%;
   }
+/* main body styling */
 button {
     background-color: #498acb;
     padding: .5rem;
@@ -162,6 +164,7 @@ button:hover{
     min-width: 350px;
     border-radius: 10px;
 }
+/* footer styling */
 footer{
     background-image: linear-gradient(#B8EDA6,#498acb);
     text-align: center;

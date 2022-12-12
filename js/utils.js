@@ -25,22 +25,22 @@ export function getParams(param) {
     const urlParams = new URLSearchParams(queryString)
     return urlParams.get(param)
 }
-  
+ // function to render the list with the template 
 export function renderListWithTemplate(
     templateElement,
     parentElement,
     list,
-    category = '',
+    animal = '',
     callback
     ) {
     parentElement.innerHTML = ''
     list.map(animal => {
       const node = templateElement.content.cloneNode(true)
-      const childNode = callback(node, product, category)
+      const childNode = callback(node, animal)
       parentElement.appendChild(childNode)
     })
 }
-  
+  // load the template
 export async function loadTemplate(path) {
     const html = await fetch(path).then(data => data.text())
     const template = document.createElement('template')
