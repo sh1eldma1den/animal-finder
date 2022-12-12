@@ -1,3 +1,4 @@
+// connect to the API and return data
 export async function getAnimal() {
   const animal = document.getElementById('searchName')
   const request = require('request');
@@ -17,7 +18,7 @@ export async function getAnimal() {
 
     document.querySelector('.searchResultTop').innerHTML = details
 }})}
-
+// export clas storing json response from API
 export default class ExternalServices {
   constructor() {}
 

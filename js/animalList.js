@@ -1,6 +1,7 @@
+// import function that renders list with template and class that holds returned json data
 import { renderListWithTemplate } from './utils.js'
 import ExternalServices from './ExternalServices.js'
-
+// create a class to hold array of animals returned
 export default class AnimalList {
   constructor(animalData, listElement, animal, selector) {
     this.animal = animal
@@ -9,14 +10,14 @@ export default class AnimalList {
     this.animals = {}
     this.selector = ''
   }
-  
+  // init the process and render the list
   async init() {
     this.animals = await this.ExternalServices.getData(this.animal)
     this.selector = selector
 
-    this.renderList(this.animals, this.listElement, this.animal, this.selector)
+    this.renderList(this.animals, this.listElement, this.animal, selector)
   }
-
+  // function to prepare the template
   prepareTemplate(node, animal) {
     const finalNode = node
     const animalName = finalNode.querySelector('.card-name')
@@ -43,7 +44,7 @@ export default class AnimalList {
     return finalNode
   }
 
-  renderList(AnimalList, parentNode, selector) {
+  renderList(AnimalList, selector, parentNode, animal) {
     const templateElement = document.querySelector()
     renderListWithTemplate(
       templateElement,
