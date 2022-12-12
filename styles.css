@@ -15,13 +15,13 @@ h1{
     font-size: 3rem;
 }
 
-p, .label{
+p, .labelTag{
     font-family: Roboto, Open Sans, Arial, Helvetica, sans-serif;
     color:#001A34;
 }
 
 header{
-    background-color: #498acb;
+    background-image: linear-gradient(#498acb, #B8EDA6);
     padding-top:2rem;
 }
 
@@ -30,12 +30,74 @@ header{
     margin-top: 10%;
     padding-bottom:0;
 }
+#sidebar {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    background-image: linear-gradient(to right,#B8EDA6,#498acb);
+    right: -300px;
+    transition: .5s;
+}
+#sidebar li:hover{
+    opacity:100%;
+}
+  
+#sidebar.active{
+    right: 0;
+    box-shadow: 5px 5px 20px rgb(146, 146, 146);
+}
 
+#sidebar ul li{
+    list-style: none;
+    color: white;
+    opacity:50%;
+    font-size: 30px;
+    padding: 10px 75px;
+  }
+  
+#sidebar li.close{
+    font-family: Roboto, sans-serif;
+    font-style:bold;
+    font-size: 50px;
+    opacity:75%;
+    text-align:left;
+    padding:20px;
+}
+#sidebar li.close:hover{
+    opacity:100%;
+  }
+  
+.toggleButton{
+    position: absolute;
+    top: 15rem;
+    right: 100px;
+    max-height: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+  
+.toggleButton img{
+    max-width: 40px;
+    margin-top: 4px;
+}
+  
+.toggleButton img .active{
+    display:none;
+  }
+.listLabel{
+    font-size:12px;
+    margin-top: 2px;
+    text-align: center;
+}
+.toggleButton span:hover{
+    opacity:100%;
+  }
 button {
     background-color: #498acb;
     padding: .5rem;
     color:white;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: none;
     cursor: pointer;
     border: 0;
@@ -53,9 +115,9 @@ button:hover{
 .textInput {
     background-color:white;
     padding: .5rem;
-    color:white;
+    color:#001A34;
     border-radius: 5px;
-    border: 0;
+    border: .5px solid #81dae8;
 }
 
 .container{
@@ -66,14 +128,16 @@ button:hover{
 .searchContainer, .dietContainer{
     background-color: #B8EDA6;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding-top:2rem;
 }
 
 .habitatContainer{
     background-color: aliceblue;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding-top:2rem;
 }
 
@@ -95,6 +159,18 @@ button:hover{
     min-width: 350px;
     border-radius: 10px;
 }
+footer{
+    background-image: linear-gradient(#B8EDA6,#498acb);
+    text-align: center;
+    color:#001A34;
+    min-height: 10rem;;
+}
+footer a{
+    color:aliceblue;
+}
+.copyright{
+padding-top: 8rem;
+}
 /* Large screen */
 @media only screen and (min-width: 768px) {
     .container{
@@ -103,13 +179,21 @@ button:hover{
         margin-left:10%;
         margin-right: 10%;
     }
-    .searchContainer, .habitatContainer,.dietContainer{
-        padding-top:2rem;
+    .toggleButton{
+        position: absolute;
+        top: 40%;
+        right: 100px;
+        max-width: 35px;
+        padding: 0;
+        text-align: center;
     }
 
-    .searchContainer {
-        border-top-right-radius: 10px;
-        border-top-left-radius: 10px;
+    .listLabel{
+        font-size:16px;
+        margin-top: 2px;
+    }
+    .searchContainer, .habitatContainer,.dietContainer{
+        padding-top:2rem;
     }
 
     .dietContainer {
@@ -120,6 +204,7 @@ button:hover{
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        border-radius: none;
     }
 
 

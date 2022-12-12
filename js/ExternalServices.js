@@ -1,4 +1,3 @@
-require('cors')
 
 document.querySelectot('submitName').addEventListener('submit', e => {
   e.preventDefault();
@@ -28,3 +27,15 @@ document.querySelectot('submitName').addEventListener('submit', e => {
 
     document.querySelector('.searchResultTop').innerHTML = details
 }})})
+
+export default class ExternalServices {
+  constructor() {}
+
+  async getData(name) {
+    const res = await fetch(baseURL + `${name}`)
+    const data = await convertToJson(res)
+    return data.Result
+  }
+}
+
+
