@@ -8,6 +8,8 @@ const externalServices = new ExternalServices()
 const animalList = new AnimalList(selector, externalServices, parentNode)
 
 document.getElementById('submitName').addEventListener('submit', e => {
-    
+    const newAnimal = document.getElementById('searchName')
+    getAnimal(newAnimal.value)
+    .then()
     animalList.init(selector)
 })
