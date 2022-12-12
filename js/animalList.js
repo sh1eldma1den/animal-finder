@@ -2,7 +2,7 @@ import { renderListWithTemplate } from './utils.js'
 import ExternalServices from './ExternalServices.js'
 
 export default class AnimalList {
-  constructor(animalData, listElement, selector) {
+  constructor(animalData, listElement, animal, selector) {
     this.animal = animal
     this.ExternalServices = animalData
     this.listElement = listElement
