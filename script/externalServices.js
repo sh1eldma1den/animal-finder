@@ -1,4 +1,5 @@
-import { getAnimal } from "/botanic-zoo-api"
+import pkg from 'botanic-zoo-api';
+const { getAnimal } = pkg;
 
 
 // const card = document.getElementById('searchResultTop')
@@ -14,7 +15,15 @@ function searchAnimal(){
     .then((response) => console.log(response))
     .catch((err) => console.error(err))
 }
-  
+ 
+// picture finder
+baseURL = 'https://api.pexels.com/v1/search' + query
+
+// const client = createClient('YOUR_API_KEY');
+// const query = 'Nature';
+
+// client.photos.search({ query, per_page: 1 }).then(photos => {...});
+
   
   
 

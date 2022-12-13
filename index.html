@@ -72,6 +72,12 @@
           <button id="add-to-list">Add</button>
         </li>
       </template>
+      <template>
+        <div id="img-card-template">
+          <h3 class="card-img-name"></h3>
+          <img class="card-img-src"/>
+        </div>
+      </template>
     </header>
     <div class="toggleButton" onclick="slide()">
       <img src="resources/list.png" alt="icon of a list">
@@ -95,22 +101,13 @@
           <ul class="animal-listing"></ul>
         </div>
       </div>
-      <div class="container habitatContainer">
+      <div class="container imgContainer">
         <form>
-            <label class="labelTag">Search by habitat:</label><br>
-            <input list="habitats" name="habitats" class="textInput">
-            <datalist id="habitats">
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-            </datalist>
-            <button type="button" value="submit">Search</button>
-        </form>
-        <div class="container searchHabitat"></div>
+          <label class="labelTag">Search by name:</label><br>
+          <input type="text" name="searchImg" id="searchImg" class="textInput">
+          <button type="button" id="submitImg">Search</button>
+      </form>
+        <div class="container searchImg"></div>
       </div>
       <div class="container dietContainer">
         <form>
