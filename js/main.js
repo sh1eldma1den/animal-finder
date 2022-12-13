@@ -60,7 +60,7 @@ function searchAnimal(){
 
     function getAllAnimals(page){
         botanicZoo
-        .getAnimal(animalInput)
+        .searchAnimal(animalInput)
         .then((response) => response.json())
         .catch((err) => console.error(err))
         .then(animal => {
