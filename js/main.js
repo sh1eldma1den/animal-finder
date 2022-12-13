@@ -1,4 +1,4 @@
-
+const botanicZoo = require('botanic-zoo-api')
 const card = document.getElementById('searchResultTop')
 const nameSearch = document.getElementById('submitName')
 const cardTemplate = document.getElementById('animal-card-template')
@@ -6,7 +6,6 @@ const animalInput = document.getElementById('searchName')
 const myList = document.getElementById('my-list-total')
 
 nameSearch.addEventListener('click', searchAnimal)
-const botanicZoo = require('botanic-zoo-api')
 const allAnimals = []
 if (localStorage.getItem('my-list') !== null) {
     allAnimals = JSON.parse(localStorage.getItem('my-list'))
