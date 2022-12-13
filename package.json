@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/sh1eldma1den/animal-finder#readme",
   "dependencies": {
+    "axios": "^1.2.1",
+    "botanic-zoo-api": "^0.1.7",
+    "cheerio": "^1.0.0-rc.12",
     "cors": "^2.8.5"
   }
 }

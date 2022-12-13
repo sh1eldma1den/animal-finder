@@ -62,14 +62,13 @@
       <template id="animal-card-template">
         <li class="animal-card">
           <h3 class="card-name"></h3>
-          <p class="card-locations">Locations: </p>
           <p class="card-prey">Prey: </p>
           <p class="card-behavior">Group Behavior: </p>
           <p class="card-threat">Biggest Threat: </p>
           <p class="card-habitat">Habitat: </p>
           <p class="card-diet">Diet: </p>
-          <p class="card-lifestyle">Lifestyle: </p>
-          <p class="card-slogan">Interesting fact: </p>
+          <p class="card-slogan">Fun fact: </p>
+          <p class="card-description">Description: </p>
           <button type="submit" id="add-to-list">Add</button>
         </li>
       </template>
@@ -83,6 +82,7 @@
         <li class="close" onclick="slide()">&#9447;</li>
         <li><h4>My List</h4></li>
        </ul>
+       <div id="my-list-total"></div>
     </div>
     <div class="container">
       <div class="container searchContainer">
@@ -91,7 +91,7 @@
             <input type="text" name="searchName" id="searchName" class="textInput">
             <button type="button" id="submitName">Search</button>
         </form>
-        <div class="container searchResultTop">
+        <div class="container searchResultTop" id="searchResultTop">
           <ul class="animal-listing"></ul>
         </div>
       </div>
