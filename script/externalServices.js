@@ -1,4 +1,4 @@
-import { getAnimal } from "botanic-zoo-api"
+import { getAnimal } from "/botanic-zoo-api"
 
 
 // const card = document.getElementById('searchResultTop')
