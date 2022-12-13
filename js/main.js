@@ -1,4 +1,4 @@
-const botanicZoo = require('botanic-zoo-api')
+// const botanicZoo = require('botanic-zoo-api')
 const card = document.getElementById('searchResultTop')
 const nameSearch = document.getElementById('submitName')
 const cardTemplate = document.getElementById('animal-card-template')
