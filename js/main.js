@@ -4,7 +4,7 @@ const nameSearch = document.getElementById('submitName')
 const cardTemplate = document.getElementById('animal-card-template')
 const animalInput = document.getElementById('searchName').value
 const myList = document.getElementById('my-list-total')
-const botanicZoo = ('botanic-zoo-api')
+
 
 nameSearch.addEventListener('click', searchAnimal)
 const allAnimals = []
@@ -36,37 +36,56 @@ function searchAnimal(){
     }
 }
     function createCard(animal, li){
-        const node = cardTemplate.content.cloneNode(true)
+        const node = cardTemplate.contentEditable.cloneNode(true)
         const animalName = node.querySelector('.card-name')
+        const locations = nodeode.querySelector('.card-locations')
         const prey = node.querySelector('.card-prey')
         const behavior = node.querySelector('.card-behavior')
         const threat = node.querySelector('.card-threat')
         const habitat = node.querySelector('.card-habitat')
         const diet = node.querySelector('.card-diet')
-        const funFact = node.querySelector('.card-slogan')
-        const desc = node.querySelector('.card-description')
-
-        animalName.textContent = animal.Name
-        prey.textContent = animal.Prey
-        behavior.textContent = animal.GroupBehavior
-        threat.textContent = animal.BiggestThreat
-        habitat.textContent = animal.Habitat
-        diet.textContent = animal.Diet
-        funFact.textContent = animal.FunFact
-        desc.textContent = animal.Description
+        const lifestyle = node.querySelector('.card-lifestyle')
+        const desc = node.querySelector('.card-slogan')
+    
+    
+        animalName.textContent = animal.name
+        locations.textContent = animal.characteristics.locations
+        prey.textContent = animal.characteristics.prey
+        behavior.textContent = animal.characteristics.group_behavior
+        threat.textContent = animal.characteristics.biggest_threat
+        habitat.textContent = node.characteristics.habitat
+        diet.textContent = node.characteristics.diet
+        lifestyle = node.characteristics.lifestyle
+        desc.textContent = node.characteristics.slogan
 
         return node
     }
 
-    function getAllAnimals(page){
-        botanicZoo
-        .searchAnimal(animalInput)
-        .then((response) => response.json())
-        .catch((err) => console.error(err))
-        .then(animal => {
-            console.log(animalInput)
-            allAnimals = allAnimals.concat(animalInput.data)
-            animalInput.data.forEach(one => card.innerHTML = `Loading Animals: ${allAnimals.length} so far ${one.name}.`)
-        })
-    }
+    function getAllAnimals() {
+        const animalInput = document.getElementById('searchName')
+        const request = require('request');
 
+        const options = {
+          method: 'GET',
+          url: 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals',
+          qs: {name: animalInput},
+          headers: {
+            'X-RapidAPI-Key': '3ef67f7eeamsh8b4f075f34e3a7dp18e177jsn3a434a265872',
+            'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com',
+            useQueryString: true
+          }
+        };
+        
+        request(options, function (error, response, body) {
+          if (error) throw new Error(error)
+        
+          console.log(body)
+      
+        .then(body => {
+
+        
+        allAnimals = allAnimals.concat(body.data);
+        body.data.forEach(one =>  card.innerHTML = `Loading Animals: ${allAnimals.length} so far ${one.name}`);
+      })})
+    
+    }
