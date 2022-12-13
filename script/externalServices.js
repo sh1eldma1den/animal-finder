@@ -10,7 +10,7 @@ const botanicZoo = ('botanic-zoo-api')
 nameSearch.addEventListener('click', searchAnimal)
 function searchAnimal(animalInput){
   botanicZoo
-    getAnimal(animalInput)
+    .getAnimal(animalInput)
     .then((response) => console.log(response))
     .catch((err) => console.error(err))
 }
