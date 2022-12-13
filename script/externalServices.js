@@ -1,4 +1,4 @@
-import pkg from 'botanic-zoo-api';
+import pkg from '/botanicZoo';
 const { getAnimal } = pkg;
 
 
