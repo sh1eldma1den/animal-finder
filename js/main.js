@@ -38,7 +38,6 @@ function searchAnimal(){
     function createCard(animal, li){
         const node = cardTemplate.contentEditable.cloneNode(true)
         const animalName = node.querySelector('.card-name')
-        const locations = nodeode.querySelector('.card-locations')
         const prey = node.querySelector('.card-prey')
         const behavior = node.querySelector('.card-behavior')
         const threat = node.querySelector('.card-threat')
@@ -49,7 +48,6 @@ function searchAnimal(){
     
     
         animalName.textContent = animal.name
-        locations.textContent = animal.characteristics.locations
         prey.textContent = animal.characteristics.prey
         behavior.textContent = animal.characteristics.group_behavior
         threat.textContent = animal.characteristics.biggest_threat
