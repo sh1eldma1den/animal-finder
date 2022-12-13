@@ -58,10 +58,16 @@ function searchAnimal(){
 
         return node
     }
-
+    async function convertToJson(res){
+        const jsonRes = await res.json()
+        if (res.ok) {
+            return jsonRes
+        } else {
+            throw {name: 'serviceError', message: jsonRes}
+        }
+    }
     function getAllAnimals() {
         const animalInput = document.getElementById('searchName')
-        const request = require('request');
 
         const options = {
           method: 'GET',
@@ -73,17 +79,11 @@ function searchAnimal(){
             useQueryString: true
           }
         };
-        
-        request(options, function (error, response, body) {
-          if (error) throw new Error(error)
-        
-          console.log(body)
-      
-        .then(body => {
-
-        
-        allAnimals = allAnimals.concat(body.data);
-        body.data.forEach(one =>  card.innerHTML = `Loading Animals: ${allAnimals.length} so far ${one.name}`);
-      })})
+        return fetch(options)
+        .then(convertToJson)
+        .then(data => data.Result)
+        .then(allAnimals = allAnimals.concat(body.data.Result))
+        .then(body.data.Result.forEach(one =>  card.innerHTML = `Loading Animals: ${allAnimals.length} so far ${one.name}`))
+      }
     
-    }
+    
