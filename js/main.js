@@ -1,4 +1,4 @@
-// const botanicZoo = require('botanic-zoo-api')
+
 const card = document.getElementById('searchResultTop')
 const nameSearch = document.getElementById('submitName')
 const cardTemplate = document.getElementById('animal-card-template')
@@ -58,6 +58,7 @@ function searchAnimal(){
     }
 
     function getAllAnimals(page){
+        const botanicZoo = require('botanic-zoo-api')
         botanicZoo
         .getAnimal(animalInput.value)
         .then((response) => response.json())
