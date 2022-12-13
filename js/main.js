@@ -5,7 +5,7 @@ const cardTemplate = document.getElementById('animal-card-template')
 const animalInput = document.getElementById('searchName')
 const myList = document.getElementById('my-list-total')
 
-nameSearch.addEventListener('click, searchAnimal')
+nameSearch.addEventListener('click', searchAnimal)
 const botanicZoo = require('botanic-zoo-api')
 const allAnimals = []
 if (localStorage.getItem('my-list') !== null) {
