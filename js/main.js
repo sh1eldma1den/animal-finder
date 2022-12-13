@@ -15,6 +15,7 @@ if (localStorage.getItem('my-list') !== null) {
         getAllAnimals(i)
     }
 }
+
 function searchAnimal(){
     localStorage.setItem('my-list', JSON.stringify(allAnimals))
     if ( animalInput.value.length < 3 ) {
@@ -32,6 +33,7 @@ function searchAnimal(){
         }
 
     }
+}
     function createCard(animal, li){
         const node = cardTemplate.content.cloneNode(true)
         const animalName = node.querySelector('.card-name')
@@ -65,4 +67,4 @@ function searchAnimal(){
             animal.data.forEach(one => card.innerHTML = `Loading Animals: ${allAnimals.length} so far ${one.name}.`)
         })
     }
-}
+
