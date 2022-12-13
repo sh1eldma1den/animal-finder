@@ -9,7 +9,7 @@ nameSearch.addEventListener('click', searchAnimal)
 const allAnimals = []
 if (localStorage.getItem('my-list') !== null) {
     allAnimals = JSON.parse(localStorage.getItem('my-list'))
-    myList.innerHTML = 'Found ${allAnimals.length} in My List.'
+    myList.innerHTML = `Found ${allAnimals.length} in My List.`
 } else {
     for (let i=1; i <=10; i++) {
         getAllAnimals(i)
