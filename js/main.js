@@ -58,7 +58,7 @@ function searchAnimal(){
     }
 
     function getAllAnimals(page){
-        const botanicZoo = require('botanic-zoo-api')
+        const botanicZoo = import('botanic-zoo-api')
         botanicZoo
         .getAnimal(animalInput.value)
         .then((response) => response.json())
