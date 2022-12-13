@@ -18,7 +18,7 @@ if (localStorage.getItem('my-list') !== null) {
 function searchAnimal(){
     localStorage.setItem('my-list', JSON.stringify(allAnimals))
     if ( animalInput.value.length < 3 ) {
-        card.innerHTML = 'Name must be 3 or more characters long. Try again!'
+        card.innerHTML = `Name must be 3 or more characters long. Try again!`
         return
     }   
     card.innerHTML = ''
