@@ -2,7 +2,7 @@
 const card = document.getElementById('searchResultTop')
 const nameSearch = document.getElementById('submitName')
 const cardTemplate = document.getElementById('animal-card-template')
-const animalInput = document.getElementById('searchName')
+const animalInput = document.getElementById('searchName').value
 const myList = document.getElementById('my-list-total')
 const botanicZoo = ('botanic-zoo-api')
 
@@ -60,13 +60,13 @@ function searchAnimal(){
 
     function getAllAnimals(page){
         botanicZoo
-        .getAnimal(animal)
+        .getAnimal(animalInput)
         .then((response) => response.json())
         .catch((err) => console.error(err))
         .then(animal => {
-            console.log(animal)
-            allAnimals = allAnimals.concat(animal.data)
-            animal.data.forEach(one => card.innerHTML = `Loading Animals: ${allAnimals.length} so far ${one.name}.`)
+            console.log(animalInput)
+            allAnimals = allAnimals.concat(animalInput.data)
+            animalInput.data.forEach(one => card.innerHTML = `Loading Animals: ${allAnimals.length} so far ${one.name}.`)
         })
     }
 
