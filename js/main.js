@@ -4,6 +4,7 @@ const nameSearch = document.getElementById('submitName')
 const cardTemplate = document.getElementById('animal-card-template')
 const animalInput = document.getElementById('searchName')
 const myList = document.getElementById('my-list-total')
+const botanicZoo = ('botanic-zoo-api')
 
 nameSearch.addEventListener('click', searchAnimal)
 const allAnimals = []
@@ -58,9 +59,8 @@ function searchAnimal(){
     }
 
     function getAllAnimals(page){
-        const botanicZoo = import('botanic-zoo-api')
         botanicZoo
-        .getAnimal(Fossa)
+        .getAnimal(animal)
         .then((response) => response.json())
         .catch((err) => console.error(err))
         .then(animal => {
