@@ -81,9 +81,10 @@ function searchAnimal(){
         };
         return fetch(options)
         .then(convertToJson)
-        .then(data => data.Result)
-        .then(allAnimals = allAnimals.concat(data.Result))
-        .then(data.Result.forEach(one =>  card.innerHTML = `Loading Animals: ${allAnimals.length} so far ${one.name}`))
-      }
+        .then(data => {
+            allAnimals = allAnimals.concat(data.Result)
+            .then(allAnimals.forEach(one =>  card.innerHTML = `Loading Animals: ${allAnimals.length} so far ${one.name}`))
+      })
+    }
     
     
