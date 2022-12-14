@@ -23,7 +23,7 @@ export function getAnimals() {
         }
       }
 
-    fetch(url,options)
+    fetch(url, options)
     .then((response) => {
         // 1. check response.ok
         if (response.ok) {
