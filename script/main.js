@@ -1,18 +1,18 @@
 
 
-document.getElementById('submitName').addEventListener('click', getAnimals);
+document.getElementById('submitName').addEventListener('click', getAnimals)
 
 export function getAnimals() {
 
-    let animal = document.getElementById('searchName').value;               //  word input
+    let animal = document.getElementById('searchName').value              //  word input
     try {
         if (!animal) {
-            throw new SyntaxError("Please enter an animal name.");
+            throw new SyntaxError("Please enter an animal name.")
         }
         
     } catch (err) {
-        alert(err.message);
-        return;
+        alert(err.message)
+        return
     }
     const url = 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals/' + animal
     const options = {
@@ -21,28 +21,28 @@ export function getAnimals() {
           'X-RapidAPI-Key': '3ef67f7eeamsh8b4f075f34e3a7dp18e177jsn3a434a265872',
           'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com'
         }
-      };
+      }
 
     fetch(url,options)
     .then((response) => {
         // 1. check response.ok
         if (response.ok) {
-          return response.json();
+          return response.json()
         }
-        return Promise.reject(response); // 2. reject instead of throw
+        return Promise.reject(response) // 2. reject instead of throw
       })
         .then(json => renderAnimals(json))
         .catch((response) => {
-            console.log(response.status);
+            console.log(response.status)
             try{
             if (response.status == 404) {
                 throw new Error("Oops! That animal is not in our database. Please try again.")
             }
         }catch (err) {
-                alert(err.message);
-                return;
+                alert(err.message)
+                return
             }
-        });
+        })
 }
         
 
