@@ -22,6 +22,14 @@ export function getAnimals() {
         .then(json=> renderAnimals(json))
         .catch ((response) => {
             console.log(response.status);
+            try{
+                if (response.status == 404) {
+                    throw new Error("That word is not contained in my dictionary, please try again.")
+                }
+            }catch (err) {
+                    alert(err.message);
+                    return;
+                }
         });
     }    
 
