@@ -2,48 +2,29 @@ import fetch from 'node-fetch';
 
 document.getElementById('submitName').addEventListener('click', getAnimals)
 
-export function getAnimals() {
-
-    let animal = document.getElementById('searchName').value              //  word input
+async function getAnimals() {
     try {
-        if (!animal) {
-            throw new SyntaxError("Please enter an animal name.")
+        let animal = document.getElementById('searchName').value              //  word input
+        const url = 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals/' + animal
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '3ef67f7eeamsh8b4f075f34e3a7dp18e177jsn3a434a265872',
+                'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com'
+            }
         }
+        const response = await fetch(url, options)
+            if (!response.ok) {
+                throw new Error(`Error! status: ${response.status}`)
+            }
+            const result = await response.json()
+            .then(renderAnimals(result))
         
     } catch (err) {
-        alert(err.message)
-        return
+        console.log(err)
     }
-    const url = 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals/' + animal
-    const options = {
-        method: 'GET',
-        headers: {
-          'X-RapidAPI-Key': '3ef67f7eeamsh8b4f075f34e3a7dp18e177jsn3a434a265872',
-          'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com'
-        }
-      }
-
-    fetch(url, options)
-    .then((response) => {
-        // 1. check response.ok
-        if (response.ok) {
-          return response.json()
-        }
-        return Promise.reject(response) // 2. reject instead of throw
-      })
-        .then(json => renderAnimals(json))
-        .catch((response) => {
-            console.log(response.status)
-            try{
-            if (response.status == 404) {
-                throw new Error("Oops! That animal is not in our database. Please try again.")
-            }
-        }catch (err) {
-                alert(err.message)
-                return
-            }
-        })
 }
+    
         
 
 export function renderAnimals(animals) {
