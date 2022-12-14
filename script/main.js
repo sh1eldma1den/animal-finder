@@ -1,7 +1,7 @@
 
 document.getElementById('submitName').addEventListener('click', getAnimals)
 
-async function getAnimals() {
+export function getAnimals() {
     try {
         let animal = document.getElementById('searchName').value              //  word input
         const url = 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals/' + animal
@@ -12,11 +12,11 @@ async function getAnimals() {
                 'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com'
             }
         }
-        const response = await fetch(url, options)
+        const response = fetch(url, options)
             if (!response.ok) {
                 throw new Error(`Error! status: ${response.status}`)
             }
-            const result = await response.json()
+            const result = response.json()
             .then(renderAnimals(result))
         
     } catch (err) {
