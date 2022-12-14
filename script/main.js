@@ -1,4 +1,3 @@
-import fetch from '/node-fetch';
 
 document.getElementById('submitName').addEventListener('click', getAnimals)
 
