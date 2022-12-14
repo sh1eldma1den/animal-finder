@@ -1,3 +1,5 @@
+
+
 document.getElementById('submitName').addEventListener('click', getAnimals);
 
 export function getAnimals() {
@@ -46,70 +48,15 @@ export function getAnimals() {
         });
     
         
-}
- 
-    
-    // function to prepare the template
-export function renderListWithTemplate(
-    templateElement,
-    parentElement,
-    list,
-    animal = '',
-    callback
-    ) {
-    parentElement.innerHTML = ''
-    list.map(animal => {
-      const node = templateElement.content.cloneNode(true)
-      const childNode = callback(node, animal)
-      parentElement.appendChild(childNode)
-    })
-}
-  // load the template
-export async function loadTemplate(path) {
-    const html = await fetch(path).then(data => data.text())
-    const template = document.createElement('template')
-    template.innerHTML = html
-    return template
-}
 
-export function prepareTemplate() {
-    const finalNode = node
-    const animalName = finalNode.querySelector('.card-name')
-    const locations = finalNode.querySelector('.card-locations')
-    const prey = finalNode.querySelector('.card-prey')
-    const behavior = finalNode.querySelector('.card-behavior')
-    const threat = finalNode.querySelector('.card-threat')
-    const habitat = finalNode.querySelector('.card-habitat')
-    const diet = finalNode.querySelector('.card-diet')
-    const lifestyle = finalNode.querySelector('.card-lifestyle')
-    const desc = finalNode.querySelector('.card-slogan')
-
-
-    animalName.textContent = animal.name
-    locations.textContent = animal.characteristics.locations
-    prey.textContent = animal.characteristics.prey
-    behavior.textContent = animal.characteristics.group_behavior
-    threat.textContent = animal.characteristics.biggest_threat
-    habitat.textContent = finalNode.characteristics.habitat
-    diet.textContent = finalNode.characteristics.diet
-    lifestyle = finalNode.characteristics.lifestyle
-    desc.textContent = finalNode.characteristics.slogan
-
-    return finalNode
-  }
-
-
-
-
-export function renderAnimals(animal,parentNode) {
-    const templateElement = document.querySelector('animal-card-template')
-    renderListWithTemplate(
-      templateElement,
-      parentNode,
-      animal,
-      this.prepareTemplate
-    )
-  }
+    function renderAnimals(animals) {
+        const outputDiv = document.getElementById('searchResultTop')
+        animals.results.forEach((animal) => {
+            let output = ""
+	        output += '<div class="card"><li class="animal-card"><h3 class="card-name">${animals.animal.name}</h3><p class="card-locations">Locations: ${animals.animal.locations}<p class="card-prey">Prey: ${animals.animal.characteristics.prey}</p><p class="card-behavior">Group Behavior: ${animals.animal.characteristics.group_behavior}</p><p class="card-threat">Biggest Threat: ${animals.animal.characteristics.biggest_threat}</p><p class="card-habitat">Habitat: ${animals.animal.characteristics.habitat}</p><p class="card-diet">Diet: ${animals.animal.characteristics.diet}</p><p class="card-lifestyle">Lifestyle: ${animals.animal.characteristics.lifestyle}</p><p class="card-slogan">Fun fact: ${animals.animal.characteristics.slogan}</p><button id="add-to-list">Add</button></li>'
+            outputDiv.appendChild(output)
+        })
+    }}
 
     
 
