@@ -12,7 +12,7 @@ export function getAnimals() {
         alert(err.message);
         return;
     }
-    const url = 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals/${animal)'
+    const url = 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals/' + animal
     console.log(animal);
     const options = {
         method: 'GET',
