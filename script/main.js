@@ -39,6 +39,7 @@ export function getAnimals() {
 
     function renderAnimals(animals) {
         const outputDiv = document.getElementById('animal-listing');
+        console.log(animals.results)
         animals.results.forEach((animal) => {
             let output = ""
 	        output += `<li class="animal-card">
