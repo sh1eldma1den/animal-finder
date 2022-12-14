@@ -13,17 +13,6 @@ export function getAnimals() {
                 'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                name: '',
-                locations:'',
-                prey:'',
-                group_behavior:'',
-                biggest_threat:'',
-                habitat:'',
-                diet:'',
-                lifestyle:'',
-                slogan:''
-            })
         };
         fetch(url, options)
         .then((response) => {
