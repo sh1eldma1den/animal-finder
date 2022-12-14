@@ -1,32 +1,32 @@
 
-document.getElementById('submitName').addEventListener('click', getAnimals)
+document.getElementById('submitName').addEventListener('click', getAnimals);
 
 
 export function getAnimals() {
-    let animal = document.getElementById('searchName').value
+    let animal = document.getElementById('searchName').value;
     try {       
                
-        const url = 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals/' + animal
+        const url = 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals/' + animal;
         const options = {
             method: 'GET',
             headers: {
                 'X-RapidAPI-Key': '3ef67f7eeamsh8b4f075f34e3a7dp18e177jsn3a434a265872',
                 'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com'
             }
-        }
+        };
         const response = fetch(url, options)
             if (!response.ok) {
-                throw new Error(`Error! status: ${response.status}`)
+                throw new Error(`Error! status: ${response.status}`);
             }
             const result = response.json()
-            .then(renderAnimals(result))
+            .then(renderAnimals(result));
         
     } catch (err) {
-        console.log(err)
+        console.log(err);
     }
 }
     function renderAnimals(animals) {
-        const outputDiv = document.getElementById('animal-listing')
+        const outputDiv = document.getElementById('animal-listing');
         animals.results.forEach((animal) => {
             let output = ""
 	        output += `<li class="animal-card">
@@ -41,7 +41,7 @@ export function getAnimals() {
             <p class="card-slogan">Fun fact: ${animals.animal.characteristics.slogan}</p>
             <button id="add-to-list">Add</button></li></div>`
             outputDiv.appendChild(output)
-        })
+        });
     }
 
     
