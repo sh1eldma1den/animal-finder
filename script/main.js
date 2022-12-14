@@ -46,17 +46,17 @@ export function getAnimals() {
                 return;
             }
         });
-    
+}
         
 
-    function renderAnimals(animals) {
+export function renderAnimals(animals) {
         const outputDiv = document.getElementById('searchResultTop')
         animals.results.forEach((animal) => {
             let output = ""
 	        output += '<div class="card"><li class="animal-card"><h3 class="card-name">${animals.animal.name}</h3><p class="card-locations">Locations: ${animals.animal.locations}<p class="card-prey">Prey: ${animals.animal.characteristics.prey}</p><p class="card-behavior">Group Behavior: ${animals.animal.characteristics.group_behavior}</p><p class="card-threat">Biggest Threat: ${animals.animal.characteristics.biggest_threat}</p><p class="card-habitat">Habitat: ${animals.animal.characteristics.habitat}</p><p class="card-diet">Diet: ${animals.animal.characteristics.diet}</p><p class="card-lifestyle">Lifestyle: ${animals.animal.characteristics.lifestyle}</p><p class="card-slogan">Fun fact: ${animals.animal.characteristics.slogan}</p><button id="add-to-list">Add</button></li>'
             outputDiv.appendChild(output)
         })
-    }}
+    }
 
     
 
