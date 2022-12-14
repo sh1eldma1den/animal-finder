@@ -24,10 +24,7 @@ export function getAnimals() {
         console.log(err)
     }
 }
-    
-        
-
-export function renderAnimals(animals) {
+    function renderAnimals(animals) {
         const outputDiv = document.getElementById('animal-listing')
         animals.results.forEach((animal) => {
             let output = ""
