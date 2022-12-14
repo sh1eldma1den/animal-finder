@@ -98,6 +98,9 @@ header{
     opacity:100%;
   }
 /* main body styling */
+.container{
+    min-height: 100vh;
+}
 button {
     background-color: #498acb;
     padding: .5rem;
@@ -125,10 +128,6 @@ button:hover{
     border: .5px solid #81dae8;
 }
 
-.container{
-    padding-top:0;
-    padding-bottom:2rem;
-}
 
 .searchContainer, .dietContainer{
     background-color: #B8EDA6;
@@ -138,6 +137,27 @@ button:hover{
     padding-top:2rem;
 }
 
+
+
+.animal-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding-right:1.5rem;
+    padding-left:1.5rem;
+    border: 2px solid #81dae8;
+    border-radius: 5px;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+
+.card-header{
+    text-align: center;
+}
+.searchResultTop{
+    display: flex;
+    flex-direction: column;
+}
 .habitatContainer{
     background-color: aliceblue;
     display: flex;
@@ -179,12 +199,7 @@ padding-top: 8rem;
 }
 /* Large screen */
 @media only screen and (min-width: 768px) {
-    .container{
-        padding-top:0;
-        padding-bottom:2rem;
-        margin-left:10%;
-        margin-right: 10%;
-    }
+
     .toggleButton{
         position: absolute;
         top: 40%;
@@ -197,6 +212,11 @@ padding-top: 8rem;
     .listLabel{
         font-size:16px;
         margin-top: 2px;
+    }
+
+    .searchResultTop{
+        display: flex;
+        flex-direction: row;
     }
     .searchContainer, .habitatContainer,.dietContainer{
         padding-top:2rem;
