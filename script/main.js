@@ -38,22 +38,23 @@ export function getAnimals() {
     }    
 
     function renderAnimals(animals) {
-        const outputDiv = document.getElementById('animal-listing');
+        const card = document.getElementById('animal-listing');
         console.log(animals.results)
         animals.results.forEach((animal) => {
-            let output = ""
-	        output += `<li class="animal-card">
-            <h3 class="card-name">${animals.animal.name}</h3>
-            <p class="card-locations">Locations: ${animals.animal.locations}</p>
-            <p class="card-prey">Prey: ${animals.animal.characteristics.prey}</p>
-            <p class="card-behavior">Group Behavior: ${animals.animal.characteristics.group_behavior}</p>
-            <p class="card-threat">Biggest Threat: ${animals.animal.characteristics.biggest_threat}</p>
-            <p class="card-habitat">Habitat: ${animals.animal.characteristics.habitat}</p>
-            <p class="card-diet">Diet: ${animals.animal.characteristics.diet}</p>
-            <p class="card-lifestyle">Lifestyle: ${animals.animal.characteristics.lifestyle}</p>
-            <p class="card-slogan">Fun fact: ${animals.animal.characteristics.slogan}</p>
-            <button id="add-to-list">Add</button></li></div>`
-            outputDiv.appendChild(output)
+            let row = '';
+	        row += `<li class="animal-card">
+            <h3>${animals.animal.name}</h3>
+            <p>Locations: ${animals.animal.locations}</p>
+            <p>Prey: ${animals.animal.characteristics.prey}</p>
+            <p>Group Behavior: ${animals.animal.characteristics.group_behavior}</p>
+            <p>Biggest Threat: ${animals.animal.characteristics.biggest_threat}</p>
+            <p>Habitat: ${animals.animal.characteristics.habitat}</p>
+            <p>Diet: ${animals.animal.characteristics.diet}</p>
+            <p>Lifestyle: ${animals.animal.characteristics.lifestyle}</p>
+            <p>Fun fact: ${animals.animal.characteristics.slogan}</p>`
+            row += '</li>'
+            card.innerHTML = row;
+
         });
     }
 
