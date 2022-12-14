@@ -27,32 +27,32 @@ export function qs(selector, parent = document) {
     return urlParams.get(param)
   }
   
-  export function renderWithTemplate(
-    templateElement,
-    parentElement,
-    homepage,
-    isHeader = false,
-    data,
-    callback
-  ) {
-    let clone = templateElement.content.cloneNode(true)
+//   export function renderWithTemplate(
+//     templateElement,
+//     parentElement,
+//     homepage,
+//     isHeader = false,
+//     data,
+//     callback
+//   ) {
+//     let clone = templateElement.content.cloneNode(true)
     
-    parentElement.appendChild(clone)
-  }
+//     parentElement.appendChild(clone)
+//   }
   
-  export async function loadTemplate(path) {
-    const html = await fetch(path).then(data => data.text())
-    const template = document.createElement('template')
-    template.innerHTML = html
-    return template
-  }
-export async function loadHeaderFooter(headerPath, footerPath, homepage) {
-    const headerTemplate = await loadTemplate(headerPath)
-    const footerTemplate = await loadTemplate(footerPath)
+//   export async function loadTemplate(path) {
+//     const html = await fetch(path).then(data => data.text())
+//     const template = document.createElement('template')
+//     template.innerHTML = html
+//     return template
+//   }
+// export async function loadHeaderFooter(headerPath, footerPath, homepage) {
+//     const headerTemplate = await loadTemplate(headerPath)
+//     const footerTemplate = await loadTemplate(footerPath)
   
-    const headerEl = document.querySelector('header')
-    const footerEl = document.querySelector('footer')
+//     const headerEl = document.querySelector('header')
+//     const footerEl = document.querySelector('footer')
   
-    renderWithTemplate(headerTemplate, headerEl, homepage, true)
-    renderWithTemplate(footerTemplate, footerEl, homepage)
-  }
+//     renderWithTemplate(headerTemplate, headerEl, homepage, true)
+//     renderWithTemplate(footerTemplate, footerEl, homepage)
+//   }
