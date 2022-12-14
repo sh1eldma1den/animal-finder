@@ -21,7 +21,7 @@ export function getAnimals() {
         })
         .then(json=> renderAnimals(json))
         .catch ((response) => {
-            console.log(err);
+            console.log(response.status);
         });
     }    
 
