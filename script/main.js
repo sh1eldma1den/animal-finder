@@ -3,8 +3,9 @@ document.getElementById('submitName').addEventListener('click', getAnimals)
 
 
 export function getAnimals() {
+    let animal = document.getElementById('searchName').value
     try {       
-        let animal = document.getElementById('searchName').value       
+               
         const url = 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals/' + animal
         const options = {
             method: 'GET',
