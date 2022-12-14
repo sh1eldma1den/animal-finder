@@ -14,19 +14,16 @@ export function getAnimals() {
         alert(err.message);
         return;
     }
-
+    const url = 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals/' + animal
     const options = {
         method: 'GET',
-        url: 'https://animals-by-api-ninjas.p.rapidapi.com/v1/animals',
-        qs: {name: animal},
         headers: {
           'X-RapidAPI-Key': '3ef67f7eeamsh8b4f075f34e3a7dp18e177jsn3a434a265872',
-          'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com',
-          useQueryString: true
+          'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com'
         }
       };
 
-    fetch(options)
+    fetch(url,options)
     .then((response) => {
         // 1. check response.ok
         if (response.ok) {
