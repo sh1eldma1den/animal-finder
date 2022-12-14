@@ -15,8 +15,8 @@ export function getAnimals() {
         };
         fetch(url, options)
         .then((response) => {
-            if (!response.ok) {
-                throw new Error(`Error! status: ${response.status}`);
+            if (response.ok) {
+                return response.json();
                 }
         })
         .then(json=> renderAnimals(json))
