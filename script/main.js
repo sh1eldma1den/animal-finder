@@ -10,8 +10,20 @@ export function getAnimals() {
             method: 'GET',
             headers: {
                 'X-RapidAPI-Key': '3ef67f7eeamsh8b4f075f34e3a7dp18e177jsn3a434a265872',
-                'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com'
-            }
+                'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: '',
+                locations:'',
+                prey:'',
+                group_behavior:'',
+                biggest_threat:'',
+                habitat:'',
+                diet:'',
+                lifestyle:'',
+                slogan:''
+            })
         };
         fetch(url, options)
         .then((response) => {
@@ -22,14 +34,6 @@ export function getAnimals() {
         .then(json=> renderAnimals(json))
         .catch ((response) => {
             console.log(response.status);
-            try{
-                if (response.status == 404) {
-                    throw new Error("That word is not contained in my dictionary, please try again.")
-                }
-            }catch (err) {
-                    alert(err.message);
-                    return;
-                }
         });
     }    
 
