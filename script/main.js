@@ -31,7 +31,7 @@ function renderAnimals(data) {
         data.forEach (a => {    
         templateA += `<li class="animal-card">
             <h3 class="card-header">Name: ${a.name}</h3>
-            <p>Locations: ${a.locations}</p>
+            <p class="locations">Locations: ${a.locations}</p>
             <p>Prey: ${a.characteristics.prey}</p>
             <p>Group Behavior: ${a.characteristics.group_behavior}</p>
             <p>Biggest Threat: ${a.characteristics.biggest_threat}</p>

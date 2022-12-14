@@ -150,11 +150,13 @@ button:hover{
     margin-top:10px;
     margin-bottom: 10px;
     box-shadow: 2px 2px 5px #498acb;
+    max-width:400px;
 }
 
 .card-header{
     text-align: center;
 }
+
 .searchResultTop{
     display: flex;
     flex-direction: column;
