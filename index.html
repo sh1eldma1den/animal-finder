@@ -79,7 +79,7 @@
         </div>
       </template> -->
     </header>
-    <!-- <div class="toggleButton" onclick="slide()">
+    <div class="toggleButton" onclick="slide()">
       <img src="resources/list.png" alt="icon of a list">
       <p class="listLabel">My List</p>
     </div>
@@ -89,8 +89,10 @@
         <li><h4>My List</h4></li>
        </ul>
        <div id="my-list-total"></div>
-    </div> -->
+    </div>
     <div class="container">
+      <div class="closeButton" onclick="minimize()">
+      </div>
       <div class="container searchContainer">
         <form>
             <label class="labelTag">Search by name:</label><br>
@@ -98,17 +100,18 @@
             <button type="button" id="submitName">Search</button>
         </form>
         <div class="container searchResultTop" id="searchResultTop">
-          <ul id="animal-listing"></ul>
+          <div id="animal-listing"></div>
         </div>
       </div>
-      <!-- <div class="container imgContainer">
+      <div class="container imgContainer">
         <form>
           <label class="labelTag">Search by name:</label><br>
           <input type="text" name="searchImg" id="searchImg" class="textInput">
           <button type="button" id="submitImg">Search</button>
       </form>
         <div class="container searchImg"></div>
-      </div> -->
+          <div id="image-listing"></div>
+      </div>
     </div>
   </body>
   <Footer>
