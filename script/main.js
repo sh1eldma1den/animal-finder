@@ -19,9 +19,6 @@ export async function getAnimals() {
         console.log(data);
         if(response){
         renderAnimals(data);
-        // .then(data => {
-        //     renderAnimals(data);
-        // })
     }
 }
 
@@ -29,7 +26,7 @@ function renderAnimals(data) {
         let card = document.getElementById('animal-listing');
         let templateA = ''
         data.forEach (a => {    
-        templateA += `<li class="animal-card">
+        templateA += `<div class="animal-card">
             <h3 class="card-header">Name: ${a.name}</h3>
             <p class="locations">Locations: ${a.locations}</p>
             <p>Prey: ${a.characteristics.prey}</p>
@@ -39,7 +36,7 @@ function renderAnimals(data) {
             <p>Diet: ${a.characteristics.diet}</p>
             <p>Lifestyle: ${a.characteristics.lifestyle}</p>
             <p><em>${a.characteristics.slogan}</em></p>
-            </li>`;
+            </div>`;
         })
             card.innerHTML = templateA;
 

@@ -1,32 +1,22 @@
-
+import {createClient} from 'pexels';
 
 document.getElementById('submitImg').addEventListener('click', getImage);
 
 
 export async function getImage() {
-    let animal = document.getElementById('searchImg').value;
-    const url = 'https://api.pexels.com/v1/search?query=' + animal;           
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '3ef67f7eeamsh8b4f075f34e3a7dp18e177jsn3a434a265872',
-            'X-RapidAPI-Host': 'animals-by-api-ninjas.p.rapidapi.com',
-            'Content-Type': 'application/json'
-        },
-      };
-        const response = await fetch(url, options);
+    const client = createClient('563492ad6f9170000100000116b3a65214e64e52b53884c2e8a74dfb');        
+    const query = document.getElementById('searchImg').value;
+    client.photos.search({ query, per_page: 1 }).then(photos => { ... });
         let data = await response.json();
         console.log(data);
         if(response){
-        renderAnimals(data);
-        // .then(data => {
-        //     renderAnimals(data);
-        // })
+        renderImage(data);
+
     }
 }
 
-function renderAnimals(data) {
-        let card = document.getElementById('animal-listing');
+function renderImage(data) {
+        let card = document.getElementById('image-listing');
         let templateA = ''
         data.forEach (a => {    
         templateA += `<li class="animal-card">
